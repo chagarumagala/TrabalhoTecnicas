@@ -6,4 +6,5 @@ public interface Builder {
     void addCon(int con);
     void addWis(int wis);
     void addInt(int intel);
+    void addLevel(int level);
 }

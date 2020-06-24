@@ -6,4 +6,6 @@ import javax.persistence.Id;
 
 public abstract class Dungeon {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) long id;
+
+    public abstract int getDifficulty();
 }
