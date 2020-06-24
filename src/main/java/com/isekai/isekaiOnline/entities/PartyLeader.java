@@ -1,5 +1,5 @@
 package com.isekai.isekaiOnline.entities;
 
-public class PartyLeader {
+public class PartyLeader{
     
 }

@@ -9,4 +9,5 @@ public abstract class Character {
     Inventory inventory;
     int[] stats;
 
+    protected abstract int calcHP();
 }
