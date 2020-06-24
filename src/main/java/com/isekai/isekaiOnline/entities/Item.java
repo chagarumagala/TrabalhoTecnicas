@@ -10,12 +10,12 @@ public class Item {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) long id;
     private String name;
     private String description;
-    private int[] attChange = new int[7];
+    private int[] statsChange = new int[7];
 
-    public Item(String name, String description, int[] attChange){
+    public Item(String name, String description, int[] statsChange){
         this.name = name;
         this.description = description;
-        this.attChange = attChange;
+        this.statsChange = statsChange;
     }
 
     public String getName(){
@@ -25,6 +25,6 @@ public class Item {
         return this.description;
     }
     public int[] getStatusChange(){
-        return this.attChange;
+        return this.statsChange;
     }
 }
