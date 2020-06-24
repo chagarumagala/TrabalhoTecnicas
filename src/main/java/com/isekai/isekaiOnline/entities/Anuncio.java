@@ -6,9 +6,15 @@ import javax.persistence.Id;
 
 public class Anuncio {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY) long id;
-    Dungeon dungeon;
-    PartyLeader pl;
+    Party party;
     String title;
     String description;
 
+    public Anuncio(Party party, String title, String description){
+        this.party = party;
+        this.title = title;
+        this.description = description;
+    }
+
+    
 }

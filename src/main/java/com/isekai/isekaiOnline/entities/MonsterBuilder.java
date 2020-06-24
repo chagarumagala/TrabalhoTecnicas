@@ -6,13 +6,6 @@ public class MonsterBuilder implements Builder{
     private int level = 0;
     private MonsterKind mk;
 
-    public MonsterBuilder(int[] stats, int statTotal, int level, MonsterKind mk){
-        this.stats = stats;
-        this.statTotal = statTotal;
-        this.level = level;
-        this.mk = mk;
-    }
-
     public MonsterKind getMonsterKind() {
         return this.mk;
     }
@@ -38,23 +31,32 @@ public class MonsterBuilder implements Builder{
 
     @Override
     public void addCon(int con) {
-        // TODO Auto-generated method stub
         stats[2] = con;
         statTotal += con;
     }
 
     @Override
     public void addWis(int wis) {
-        // TODO Auto-generated method stub
         stats[3] = wis;
         statTotal += wis;
     }
 
     @Override
     public void addInt(int intel) {
-        // TODO Auto-generated method stub
         stats[4] = intel;
         statTotal += intel;
     }
     
+    public Monster getMonster(){
+        switch(mk){
+            case  BRUISERMONSTER:
+                return new BruiserMonster(stats, level);
+            case ANTIMAGEMONSTER:
+                return new AntiMageMonster(stats, level);
+            case BURSTERMONSTER:
+                return new BursterMonster(stats, level);
+            default:
+                return null;
+        }
+    }
 }

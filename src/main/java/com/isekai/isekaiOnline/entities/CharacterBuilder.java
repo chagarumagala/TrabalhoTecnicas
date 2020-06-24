@@ -4,7 +4,11 @@ public class CharacterBuilder implements Builder{
     int[] stats;
     int statTotal = 0;
     int level;
+    CharacterKind ck;
 
+    public void addCharacterKind(CharacterKind ck){
+        this.ck = ck;
+    }
     public void addLevel(int i ){
         this.level = i;
     }
@@ -20,32 +24,42 @@ public class CharacterBuilder implements Builder{
 
     @Override
     public void addDex(int dex) {
-        // TODO Auto-generated method stub
         stats[1] = dex;
         statTotal += dex;
     }
 
     @Override
     public void addCon(int con) {
-        // TODO Auto-generated method stub
         stats[2] = con;
         statTotal += con;
     }
 
     @Override
     public void addWis(int wis) {
-        // TODO Auto-generated method stub
         stats[3] = wis;
         statTotal += wis;
     }
 
     @Override
     public void addInt(int intel) {
-        // TODO Auto-generated method stub
         stats[4] = intel;
         statTotal += intel;
     }
 
+    public Character returnCharacter(){
+        switch(ck){
+            case MAGE:
+                return new Mage(stats, level);
+            case WARRIOR:
+                return new Warrior(stats, level);
+            case CLERIC:
+                return new Cleric(stats, level);
+            case ROGUE:
+                return new Rogue(stats, level);
+            default:
+                return null;
+        }
+    }
    
     
 }
